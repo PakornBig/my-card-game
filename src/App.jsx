@@ -1,7 +1,11 @@
+import React from "react";
+import Game from "./components/Game";
 function App() {
   return (
-    <div>
-      <p>Hello World</p>
+    <div className="App">
+      <Game />
     </div>
   )
-}
+};
+
+export default App;

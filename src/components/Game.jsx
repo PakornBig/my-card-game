@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import Player from "./Player";
 import Score from "./Score";
+import playerwin from "../../public/playerwin.png"
+import botwin from "../../public/botwin.png"
+import draw from "../../public/draw.png"
 
 const suits = ["♥", "♦", "♣", "♠"];
 const values = [
@@ -88,11 +91,26 @@ function Game() {
 
   const getWinner = () => {
     if (playerScore > botScore) {
-      return "Player Wins!";
+      return (
+        <div className="player-win">
+            <img id="img-player-win" src={playerwin} alt="img-player-win"/>
+            <h2>"Player Wins!"</h2>
+        </div>
+        )
     } else if (botScore > playerScore) {
-      return "Bot Wins!";
+        return (
+        <div className="bot-win">
+            <img id="img-bot-win" src={botwin} alt="img-bot-win"/>
+            <h2>"Bot Wins!"</h2>
+        </div>
+        )
     } else {
-      return "It's a Draw!";
+        return (
+        <div className="draw">
+            <img id="img-draw" src={draw} alt="img-bot-draw"/>
+            <h2>"It's a Draw!"</h2>
+        </div>
+        )
     }
   };
 
@@ -104,7 +122,7 @@ function Game() {
       <div className="game-content">
         {isGameOver() ? (
           <div className="game-over">
-            <h2>{getWinner()}</h2>
+            <div>{getWinner()}</div>
             <br />
             <h3>
               Final Score: Player {playerScore} - Bot {botScore}

@@ -148,13 +148,13 @@ function Game() {
                     <div className="card">
                       {lastPlayed
                         ? `${lastPlayed.botCard.value}${lastPlayed.botCard.suit}`
-                        : ""}
+                        : <span className="hidden-card">?</span>}
                     </div>
                     <label>VS</label>
                     <div className="card">
                       {lastPlayed
                         ? `${lastPlayed.playerCard.value}${lastPlayed.playerCard.suit}`
-                        : ""}
+                        : <span className="hidden-card">?</span>}
                     </div>
                   </div>
                 </div>
